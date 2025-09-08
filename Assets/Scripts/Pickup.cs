@@ -1,7 +1,9 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Pickup : MonoBehaviour
 {
+    public RawImage img;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,13 +25,21 @@ public class Pickup : MonoBehaviour
             Debug.Log("pickup");
             Inventory inv = other.transform.GetComponent<Inventory>();
 
-            if(inv.Add(transform.gameObject))
+            if(inv.Add(transform.parent.gameObject))
             {
-                transform.gameObject.SetActive(false);
-                transform.position += Vector3.down * 666;
+                transform.parent.gameObject.SetActive(false);
+                transform.parent.position += Vector3.down * 666;
+
+                img.gameObject.SetActive(true);
+
             }
 
 
         }
+    }
+
+    public void hideImage()
+    {
+        img.gameObject.SetActive(false);
     }
 }
