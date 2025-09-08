@@ -51,7 +51,7 @@ public class DoorTrigger : MonoBehaviour
             }
             else
             {
-
+                //tell the player they need the key
             }
             
         }

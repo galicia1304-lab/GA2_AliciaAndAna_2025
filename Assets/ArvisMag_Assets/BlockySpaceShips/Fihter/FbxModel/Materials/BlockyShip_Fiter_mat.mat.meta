@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fd3f9dbeae2c3af4f8eb51a9285ab7ef
+timeCreated: 1492598851
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88440
+  packageName: Blocky Space Fighter
+  packageVersion: 1.0
+  assetPath: Assets/ArvisMag_Assets/BlockySpaceShips/Fihter/FbxModel/Materials/BlockyShip_Fiter_mat.mat
+  uploadId: 175190
