@@ -11,7 +11,9 @@ public class FireplaceTrigger : MonoBehaviour
 
 
     private bool nearFireplace = false;
-    private bool ramptdown = false;
+    private bool rampdownfire = false;
+    private bool rampdownlight = false;
+
 
     private void Update()
     {
@@ -19,25 +21,30 @@ public class FireplaceTrigger : MonoBehaviour
         {
             Debug.Log("Stop fire");
             flames[1].Stop();
-            ramptdown = true;
+            rampdownfire = true;
+            rampdownlight = true;
 
         }
-        if (ramptdown)
+        if (rampdownfire)
         {
             if (fireaudio.volume > 0)
             {
-                fireaudio.volume -= Time.deltaTime * 0.1f;
+                fireaudio.volume -= Time.deltaTime * 0.1f;  //ramp down audio at this rate
+                                                            //yeah ya could make it a public param
             }
             else
             {
                 fireaudio.Stop();
-                ramptdown = false;
-            }
+                rampdownfire = false;
+            }            
+        }
+        if(rampdownlight)
+        {
             if (firelight.intensity > 0)
             {
-                firelight.intensity -= Time.deltaTime * 5.0f;
+                firelight.intensity -= Time.deltaTime ;
             }
-            
+
         }
     }     
 
