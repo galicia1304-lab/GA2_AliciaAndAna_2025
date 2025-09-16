@@ -24,16 +24,17 @@ public class FireplaceTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        //GOOD SUSHI
+
         if (other.tag == "Player")
         {
-            Debug.Log("in fireplace");
+            //To test if the trigger is working
+            //Debug.Log("in fireplace");
 
             Transform plyr = other.transform;
 
             //cast a ray from the player forward by some distance and see what we hit
             // Bit shift the index of the layer to get a bit mask
-            int layerMask = 1 << 8; //doors or other "interactable"
+            int layerMask = 1 << 8; //fireplace or other "interactable"
 
             bool didHit = false;
             RaycastHit hit;
@@ -52,8 +53,8 @@ public class FireplaceTrigger : MonoBehaviour
 
             if (didHit )
             {
-                //if hit and it's a door, pop the message
-                message.text = "press E to take out the fire";
+                //if hit and it's the logholder, pop the message
+                message.text = "press E to put out the fire";
                 backdrop.SetActive(true);
                 nearFireplace = true;
 
