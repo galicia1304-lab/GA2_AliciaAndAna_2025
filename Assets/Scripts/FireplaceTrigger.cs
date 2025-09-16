@@ -6,20 +6,40 @@ public class FireplaceTrigger : MonoBehaviour
     public ParticleSystem[] flames;
     public GameObject backdrop;
     public Text message;
+    public AudioSource fireaudio;
+    public Light firelight;
+
 
     private bool nearFireplace = false;
+    private bool ramptdown = false;
 
     private void Update()
     {
-        if(nearFireplace && Input.GetKeyDown(KeyCode.E))
+        if (nearFireplace && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Stop fire");
             flames[1].Stop();
-           
+            ramptdown = true;
+
         }
-
-
-    }
+        if (ramptdown)
+        {
+            if (fireaudio.volume > 0)
+            {
+                fireaudio.volume -= Time.deltaTime * 0.1f;
+            }
+            else
+            {
+                fireaudio.Stop();
+                ramptdown = false;
+            }
+            if (firelight.intensity > 0)
+            {
+                firelight.intensity -= Time.deltaTime * 5.0f;
+            }
+            
+        }
+    }     
 
 
     private void OnTriggerStay(Collider other)
