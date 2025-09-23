@@ -31,6 +31,32 @@ public class BookshelfTrigger : MonoBehaviour
         //this is what is called a finite state machine, or FSM
         if(isNearDoor && Input.GetKeyDown(KeyCode.E))
         {
+            bool hasbook = false;
+
+
+            Inventory inv = player.GetComponent<Inventory>();
+            for (int i = 0; i < inv.stuff.Length; i++)
+            {
+                if (inv.stuff[i] == theBook.gameObject)
+                {
+                    hasbook = true;
+                }
+
+
+            }
+
+            if (!hasbook)
+            {
+                Debug.Log("AINT GOT THE BOOK");
+                return;
+            }
+
+
+            inv.placeItem(theBook.gameObject);
+
+
+            Debug.Log("start moving book");
+
             //move the book
             theBook.gameObject.SetActive(true);
             theBook.position = player.position + Vector3.up + player.right;
@@ -39,7 +65,7 @@ public class BookshelfTrigger : MonoBehaviour
             //get current rotation/pos           
             rot1 = theBook.rotation;
             pos1 = theBook.position;
-            
+
             //get final rotation/pos
             rot2 = target.rotation;
             pos2 = target.position;
@@ -50,7 +76,8 @@ public class BookshelfTrigger : MonoBehaviour
 
         if(moveTheBook)
         {
-            
+            Debug.Log("move book");
+
             //lerp the rotation/position the T way
             theBook.rotation = Quaternion.Lerp(rot1, rot2, t);
             theBook.position = Vector3.Lerp(pos1, pos2, t);
@@ -62,6 +89,8 @@ public class BookshelfTrigger : MonoBehaviour
             t += Time.deltaTime * bookMoveSpeed; 
             if (t > 1)
             {
+
+                Debug.Log("finalize book");
                 t = 0;
                 finalizeTheBook = true;
                 moveTheBook = false;
@@ -71,6 +100,7 @@ public class BookshelfTrigger : MonoBehaviour
 
         if (finalizeTheBook)
         {
+            Debug.Log("finalize book 2");
 
             t += Time.deltaTime * bookMoveSpeed;
             if(t >= 1)
