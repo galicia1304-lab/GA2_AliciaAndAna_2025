@@ -92,8 +92,15 @@ public class BookshelfTrigger : MonoBehaviour
 
                 Debug.Log("finalize book");
                 t = 0;
-                finalizeTheBook = true;
+                
                 moveTheBook = false;
+
+
+                //child the book to the shelf
+                theBook.parent = target;
+
+                Debug.Log("Open the door");
+                doorHinge.SetTrigger("OpenDoor");
 
             }
         }
@@ -112,6 +119,10 @@ public class BookshelfTrigger : MonoBehaviour
 
                 Debug.Log("Open the door");
                 doorHinge.SetTrigger("OpenDoor");
+
+                theBook.gameObject.SetActive(false);
+                theBook.position = Vector3.down * 666;
+
             }
             else
             {
