@@ -85,7 +85,11 @@ public class DrawerTrigger : MonoBehaviour
                     Debug.Log("Hit Paper");
                     Transform paper = hit.transform;
 
-                    paper.parent = null;
+                    paper.parent = Camera.main.transform ;
+
+                    //move it to where it looks good
+                    paper.localPosition = Vector3.zero + new Vector3(0f,-0.3f,0.5f);
+                    paper.transform.localRotation = Quaternion.Euler(-180, 0, 180);
 
                    
 
