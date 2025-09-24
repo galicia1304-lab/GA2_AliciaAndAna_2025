@@ -96,8 +96,8 @@ public class BookshelfTrigger : MonoBehaviour
                 moveTheBook = false;
 
 
-                //child the book to the shelf
-                theBook.parent = target;
+                //hide the book
+                theBook.gameObject.SetActive(false);
 
                 Debug.Log("Open the door");
                 doorHinge.SetTrigger("OpenDoor");
