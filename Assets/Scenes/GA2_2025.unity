@@ -4102,6 +4102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7fddfc3b3d52745a7b65b215cdff06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hinge: {fileID: 0}
+  openAngle: 90
+  speed: 200
 --- !u!65 &226196597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11283,7 +11286,6 @@ Transform:
   m_Children:
   - {fileID: 1486016331}
   - {fileID: 1919568780}
-  - {fileID: 2251025171582486293}
   m_Father: {fileID: 1957830373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &628341294 stripped
@@ -35803,6 +35805,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0c6ccb8b9d7934c8c551e0ce1c8738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 226196596}
+  prompt: {fileID: 755103340}
+  doorMask:
+    serializedVersion: 2
+    m_Bits: 512
+  audioSource: {fileID: 226196598}
+  openClip: {fileID: 8300000, guid: 032df95a814dc4845b295b38680547c8, type: 3}
+  closeClip: {fileID: 8300000, guid: 0d057a354688be749ba4bd59a733548c, type: 3}
+  volume: 1
+  pitchRandomRange: {x: 0.96, y: 1.04}
 --- !u!65 &1953663594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40801,22 +40813,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5080560480726415153}
   m_Mesh: {fileID: -1588977260694985515, guid: ce124de5562fb7149b0a821ae38f06e1, type: 3}
---- !u!1 &1474629652123442607
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2251025171582486293}
-  m_Layer: 0
-  m_Name: PaperThirdRoom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1565372395367854844
 GameObject:
   m_ObjectHideFlags: 0
@@ -41043,21 +41039,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &2251025171582486293
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474629652123442607}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.59897, y: 2.589202, z: -22.92335}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 626144195}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2257748034427490382
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -41715,7 +41696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ed952e49ece884295e106bae25e171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdPoint: {fileID: 0}
+  isHeld: 0
 --- !u!33 &5239668129940090171
 MeshFilter:
   m_ObjectHideFlags: 0
