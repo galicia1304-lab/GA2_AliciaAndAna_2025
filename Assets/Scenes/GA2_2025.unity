@@ -4064,8 +4064,8 @@ GameObject:
   m_Component:
   - component: {fileID: 226196595}
   - component: {fileID: 226196597}
-  - component: {fileID: 226196596}
   - component: {fileID: 226196598}
+  - component: {fileID: 226196599}
   m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
@@ -4090,21 +4090,6 @@ Transform:
   - {fileID: 779694828}
   m_Father: {fileID: 1166027376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &226196596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226196594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7fddfc3b3d52745a7b65b215cdff06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hinge: {fileID: 0}
-  openAngle: 90
-  speed: 200
 --- !u!65 &226196597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4223,6 +4208,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &226196599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226196594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7fddfc3b3d52745a7b65b215cdff06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hinge: {fileID: 668515001}
+  openAngle: 90
+  speed: 200
 --- !u!1 &227638232 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2954126215877555312, guid: c1b4590b539e7914d85831fb7a59bc53, type: 3}
@@ -32971,7 +32971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 350395726041736099, guid: 91dd097ef7846004093f628ed20dcfdb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.3
+      value: 4.68
       objectReference: {fileID: 0}
     - target: {fileID: 350395726041736099, guid: 91dd097ef7846004093f628ed20dcfdb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -32979,7 +32979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 350395726041736099, guid: 91dd097ef7846004093f628ed20dcfdb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.83
+      value: 19.76
       objectReference: {fileID: 0}
     - target: {fileID: 350395726041736099, guid: 91dd097ef7846004093f628ed20dcfdb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -35805,7 +35805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0c6ccb8b9d7934c8c551e0ce1c8738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 226196596}
+  door: {fileID: 226196599}
   prompt: {fileID: 755103340}
   doorMask:
     serializedVersion: 2
