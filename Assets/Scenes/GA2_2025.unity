@@ -40693,6 +40693,7 @@ GameObject:
   - component: {fileID: 3501519604966799709}
   - component: {fileID: 268494926186609162}
   - component: {fileID: 5165245430238462846}
+  - component: {fileID: 5165245430238462847}
   m_Layer: 11
   m_Name: PaperThirdRoom
   m_TagString: Untagged
@@ -41702,6 +41703,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1050974422812936719, guid: 159dfa63db5802643a02ed16e7d5faa0, type: 3}
+--- !u!114 &5165245430238462847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805256758393025993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ed952e49ece884295e106bae25e171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdPoint: {fileID: 0}
 --- !u!33 &5239668129940090171
 MeshFilter:
   m_ObjectHideFlags: 0
