@@ -3249,8 +3249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f483781b302aab74db5e62e304b4188c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 795655605}
-  drawerController: {fileID: 6905274409335244569}
 --- !u!65 &177278653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4296,7 +4294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hinge: {fileID: 668515001}
-  openAngle: 90
+  openAngle: -90
   speed: 200
 --- !u!1 &227638232 stripped
 GameObject:
