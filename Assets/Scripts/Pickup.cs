@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Pickup : MonoBehaviour
 {
-    public Texture img;  //this pickup's image in the 2d gui
+    public Image img;  //this pickup's image in the 2d gui
 
     public bool allowPickup = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,8 +34,7 @@ public class Pickup : MonoBehaviour
                 transform.parent.gameObject.SetActive(false);
                 transform.parent.position += Vector3.down * 666;
 
-                //img.gameObject.SetActive(true); //show the image in the 2d GUI
-
+                img.gameObject.SetActive(true); //show the image in the 2d GUI
             }
 
             allowPickup = false;
@@ -45,4 +44,5 @@ public class Pickup : MonoBehaviour
     {
         allowPickup = true;
     }
+
 }
