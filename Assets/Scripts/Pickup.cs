@@ -1,48 +1,55 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+
 public class Pickup : MonoBehaviour
 {
-    public Image img;  //this pickup's image in the 2d gui
-
+    public Image img;  // this pickup's image in the 2D GUI
     public bool allowPickup = true;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // ADDED: sound fields 
+    [Header("Pickup Sound Settings")]
+    public AudioClip pickupClip;
+    [Range(0f, 1f)] public float volume = 1f;
+   
+
+    void Start() { }
+    void Update() { }
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if(other.tag == "Player" && allowPickup)
+        if (other.CompareTag("Player") && allowPickup)
         {
-
             Debug.Log("pickup");
             Inventory inv = other.transform.GetComponent<Inventory>();
 
-            //Because the trigger volume is a child of the rigid body
-            //we get its parent as the actual object picked up.
-            //due to the simple PlayerController not entering the collision volume
-            if(inv.Add(transform.parent.gameObject))
+            // trigger is a child; parent is the actual item
+            if (inv != null && inv.Add(transform.parent.gameObject))
             {
+                // play sound FIRST using a temp source that survives deactivation
+                PlayPickupSound();
+
+                // then hide/move the 3D object
                 transform.parent.gameObject.SetActive(false);
                 transform.parent.position += Vector3.down * 666;
 
-                img.gameObject.SetActive(true); //show the image in the 2d GUI
+                // show the image in the 2D GUI
+                if (img != null) img.gameObject.SetActive(true);
             }
 
             allowPickup = false;
         }
     }
+
     public void AllowPickup()
     {
         allowPickup = true;
     }
 
+    // ADDED: sound playback that won't be cut off 
+    private void PlayPickupSound()
+    {
+        if (pickupClip == null) return;
+        AudioSource.PlayClipAtPoint(pickupClip, transform.position, volume);
+    }
+    
 }
